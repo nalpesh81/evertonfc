@@ -2,8 +2,8 @@
 Feature: as a user i should be able to register
 
   Scenario: 001-verify user should be able to register with valid credentials
-    Given I navigate to everton fc home page
-    And page has loaded
+    Given I navigate to evertonfc home page
+    And I click on register link
     When I scroll down
     And I enter valid email in email field
     And I enter valid password in password field
@@ -21,7 +21,7 @@ Feature: as a user i should be able to register
     And I select valid address
     And I click on your communication prefereances link
     And I agree terms & condition checkbox
-    Then I click on creat account link
+    Then I click on creat account button
     And I should able to see verify your email message
 
 

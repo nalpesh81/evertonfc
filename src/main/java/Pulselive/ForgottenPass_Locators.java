@@ -21,8 +21,8 @@ public class ForgottenPass_Locators extends Driver{
     }
 
     public static WebElement _verifyMessage ()
-    { WebElement element=driver.findElement(By.xpath("//span[@xpath='1']"));
-        return element;
+    { WebElement element=driver.findElement(By.xpath("//span[contains(text(),'You should receive an email shortly')]"));
+    return element;
     }
 
 
