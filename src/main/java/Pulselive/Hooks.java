@@ -3,13 +3,17 @@ package Pulselive;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import org.openqa.selenium.By;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-public class Hooks extends Driver {
+public class Hooks extends Driver{
 
+    Utils utils = new Utils();
 
     //create object of BrowserSelector
     BrowserSelector browserSelector = new BrowserSelector ();
@@ -31,10 +35,15 @@ public class Hooks extends Driver {
 
 
     @After
-    public void tearDown()
-    {
+    public void tearDown(){
         driver.close();
     }
+//    public void tearDown(ITestResult result){
+//        if(ITestResult.FAILURE==result.getStatus()){
+//            utils.takeScreenshot(result.getName());
+//        }
+//        driver.close();
+//    }
 
 
 }

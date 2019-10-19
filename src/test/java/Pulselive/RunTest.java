@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = ".",
 //        "src\\test\\Resources\\FeatureFiles\\",
-               tags = "@Register, @Login, @ResetPassword" )
+               tags = "@ResetPassword" )
 
 public class RunTest {
 }

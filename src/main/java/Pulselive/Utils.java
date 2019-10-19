@@ -75,7 +75,7 @@ public class Utils extends Driver{
     }
 
     // this method is to get the screenshot
-    public void takeScreenshot(String filename){
+    public static void takeScreenshot(String filename){
         //Convert web driver object to TakeScreenshot
         TakesScreenshot scrShot =((TakesScreenshot)driver);
 
@@ -83,7 +83,7 @@ public class Utils extends Driver{
         File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
 
         //Move image file to new destination
-        File DestFile=new File("src\\test\\Screenshots"+filename+randomDate()+".png");
+        File DestFile=new File("src/test/ScreenShots/"+filename+randomDate()+".png");
 
         //Copy file at destination
         try {
@@ -91,6 +91,26 @@ public class Utils extends Driver{
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public static void captureScreenshot(WebDriver driver, String screenshotName)
+    {
+        try {
+            TakesScreenshot ts =(TakesScreenshot)driver;    // Create reference of TakesScreenshot
+            File source = ts.getScreenshotAs(OutputType.FILE);  // Call method to capture screenshot
+
+            // Copy files to specific location here it will save all screenshot in our project home directory and
+            // result.getName() will return name of test case so that screenshot name will be same
+            FileUtils.copyFile(source,new File("src/test/ScreenShots/"+screenshotName+".png"));
+
+        }
+        catch (Exception e)
+        {
+            System.out.println("Exception while taking screenshot" + e.getMessage());
+            e.printStackTrace();
+        }
+
     }
 
 }
