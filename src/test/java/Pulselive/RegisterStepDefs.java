@@ -110,5 +110,6 @@ public class RegisterStepDefs extends Driver {
     @And("^I should able to see verify your email message$")
     public void iShouldAbleToSeeVerifyYourEmailMessage() {
         Assert.assertTrue(Registration_Locators._verifyMessage().isDisplayed());
+        Utils.captureScreenshot(driver, "Registration Successfull");
     }
 }

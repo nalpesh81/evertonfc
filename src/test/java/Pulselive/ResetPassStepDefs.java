@@ -28,7 +28,7 @@ public class ResetPassStepDefs extends Driver {
     @Then("^I should be able to see confirmation message$")
     public void iShouldBeAbleToSeeConfirmationMessage() {
         Assert.assertTrue(ForgottenPass_Locators._verifyMessage().isDisplayed());
-        Utils.takeScreenshot("Register");
+        Utils.captureScreenshot(driver, "ResetPassword");
     }
 
 }
